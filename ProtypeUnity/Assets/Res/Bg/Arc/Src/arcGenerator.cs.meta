@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 94a82e2aa688cb64b9594edc33e428cf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - black_arcPrefab: {fileID: 6971975809504569451, guid: 1c3837d2f36faba4798a74372e35e5d7,
+      type: 3}
+  - red_arcPrefab: {fileID: 6028874250972207786, guid: fbaf67548317977429b928ebfab457be,
+      type: 3}
+  - green_arcPrefab: {fileID: 6345114769640703439, guid: 38e6d021c79a216408729ba4c93d7549,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
