@@ -5,11 +5,14 @@ using UnityEngine;
 public class kumoController : MonoBehaviour
 {
     public GameObject planet;
+    GameObject map_controller;
 
     // Start is called before the first frame update
     void Start()
     {
         this.planet = GameObject.Find("en");
+        this.map_controller = GameObject.Find("baseController");
+
     }
 
     // Update is called once per frame
@@ -20,13 +23,6 @@ public class kumoController : MonoBehaviour
 
         transform.RotateAround(planet.transform.position, axis, gameData.MAP_SPEED * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.RotateAround(planet.transform.position, axis, -gameData.MAP_SPEED);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.RotateAround(planet.transform.position, axis, gameData.MAP_SPEED);
-        }
+        transform.RotateAround(planet.transform.position, axis, -this.map_controller.GetComponent<baseController>().speed);
     }
 }

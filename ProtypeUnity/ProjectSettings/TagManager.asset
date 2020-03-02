@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - mocha
+  - grass
+  - solid
+  - base_arc1
+  - base_arc2
+  - base_arc3
+  - base_arc4
   layers:
   - Default
   - TransparentFX

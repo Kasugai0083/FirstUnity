@@ -13,6 +13,13 @@ public class greenPirce : pirceBase
     // Update is called once per frame
     void Update()
     {
-        Wither();
+        if (this.land_status == Status.WET)
+        {
+            Wet();
+        }
+        else
+        {
+            Wither();
+        }
     }
 }

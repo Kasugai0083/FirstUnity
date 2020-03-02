@@ -7,7 +7,7 @@ using UnityEngine;
 public class pirceBase : MonoBehaviour
 {
     
-    public Attribute land_attribute = Attribute.ETC;
+    public Attribute land_attribute = Attribute.GRASS;
     public Building land_building = Building.NONE;
     public Status land_status = Status.NONE;
     public int land_water = 100;
@@ -26,7 +26,30 @@ public class pirceBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Wither();
+        if (this.land_status == Status.WET)
+        {
+            Wet();
+        }
+        else
+        {
+            Wither();
+        }
+    }
+
+    public void Wet()
+    {
+        delta += Time.deltaTime;
+
+        if (delta > span)
+        {
+            delta = 0;
+
+            if (this.land_water < 100)
+            {
+                this.land_water++;
+            }
+
+        }
     }
 
     public void Wither()

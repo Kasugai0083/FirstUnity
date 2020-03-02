@@ -7,8 +7,12 @@ public class arcGenerator : MonoBehaviour
 {
     
     public GameObject grass_solidPrefab;
+    public GameObject solid_grassPrefab;
     public GameObject grassPrefab;
     public GameObject solidPrefab;
+    public GameObject basePrefab;
+
+    public GameObject[] arc_slot = new GameObject[4];
 
     public bool[] Reverse = { false, false, false, false };
 
@@ -19,15 +23,33 @@ public class arcGenerator : MonoBehaviour
         int randam_generate = 0;
         randam_generate = Random.Range(0,(int)Attribute.ETC);
 
-        GameObject arc1 = Instantiate(grassPrefab) as GameObject;
-        GameObject arc2 = Instantiate(grassPrefab) as GameObject;
-        GameObject arc3 = Instantiate(solidPrefab) as GameObject;
-        GameObject arc4 = Instantiate(grass_solidPrefab) as GameObject;
+        this.arc_slot[0] = GameObject.Find("base_arc1");
+        this.arc_slot[1] = GameObject.Find("base_arc2");
+        this.arc_slot[2] = GameObject.Find("base_arc3");
+        this.arc_slot[3] = GameObject.Find("base_arc4");
 
-        arc1.transform.Rotate(0, 0, 0);
-        arc2.transform.Rotate(0, 0, 90);
-        arc3.transform.Rotate(0, 0, 180);
-        arc4.transform.Rotate(0, 180, 270);
+        for (int i = 0; i < 4; i++)
+        {
+            if (arc_slot[i].GetComponent<pirceBase>().land_attribute == Attribute.GRASS)
+            {
+                arc_slot[i] = Instantiate(grassPrefab) as GameObject;
+            }
+        }
+
+
+
+        //arc_slot[0] = Instantiate(grassPrefab) as GameObject;
+        //arc_slot[1] = Instantiate(solidPrefab) as GameObject;
+        //arc_slot[2] = Instantiate(solid_grassPrefab) as GameObject;
+        //arc_slot[3] = Instantiate(grass_solidPrefab) as GameObject;
+
+
+        arc_slot[0].transform.Rotate(0, 0, 0);
+        arc_slot[1].transform.Rotate(0, 0, 90);
+        arc_slot[2].transform.Rotate(0, 0, 180);
+        arc_slot[3].transform.Rotate(0, 0, 270);
+
+
     }
 
 

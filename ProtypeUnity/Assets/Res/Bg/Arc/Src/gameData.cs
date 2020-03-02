@@ -21,6 +21,7 @@ public enum Building
 
 public enum Status
 {
+    WET,
     FESTIVAL,
     WITHER,
     PEACE,
@@ -31,4 +32,5 @@ public enum Status
 public class gameData : MonoBehaviour
 {
     public const float MAP_SPEED = 1.0f;
+    public const float DECLERATION = 0.99f;
 }
